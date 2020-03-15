@@ -9,4 +9,4 @@ VALUES (4, 'The Sims 4', LOAD_FILE('D:\CIS 1512 Software Engineering\game images
 INSERT INTO games (id, game_name, game_logo)
 VALUES (5, 'Stardew Valley', LOAD_FILE('D:\CIS 1512 Software Engineering\game images/StardewValley.jpg'));
 INSERT INTO games (id, game_name, game_logo)
-VALUES (6, 'Overcooked', LOAD_FILE('D:\CIS 1512 Software Engineering\game images/Overcooked.jpg'));games
+VALUES (6, 'Overcooked', LOAD_FILE('D:\CIS 1512 Software Engineering\game images/Overcooked.jpg'));
