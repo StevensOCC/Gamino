@@ -1,0 +1,25 @@
+package GaminoDatabase;
+
+/**
+ *
+ * @author Mel_Hiam
+ */
+public class GameTable {
+    
+    private String gameName;
+    
+    
+    public GameTable() {
+    }
+    
+    public GameTable(String gameName) {
+        this.gameName = gameName; 
+    }
+     
+    public String getGameName() {
+        return gameName;
+    }
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
+    }
+}
