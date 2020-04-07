@@ -1,0 +1,33 @@
+package GaminoDatabase;
+
+/**
+ *
+ * @author Mel_Hiam
+ */
+public class FavoritesTable {
+    
+    private int gameId;
+    private int userId;
+    
+    
+    public FavoritesTable() {
+    }
+    
+    public FavoritesTable(int gameId, int userId) {
+        this.gameId = gameId; 
+        this.userId = userId;
+    }
+     
+    public Integer getGameId() {
+        return gameId;
+    }
+    public void setGameId(int gameId) {
+        this.gameId = gameId;
+    }
+    public Integer getuserId() {
+        return userId;
+    }
+    public void setuserID(int userId) {
+        this.userId = userId;
+    }
+}
