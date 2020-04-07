@@ -1,11 +1,11 @@
-show create table user;
+show create table users;
 show create table topics;
 show create table games;
 show create table favorites;
 show create table conversation_input;
 show create table conversation_output;
 
-INSERT INTO user (username, user_email, user_first_name, user_last_name, user_password)
+INSERT INTO users (username, user_email, user_first_name, user_last_name, user_password)
 VALUES ('gametester', 'gametester@fake.com', 'John', 'Doe', 'myp@55word');
 
 INSERT INTO games (game_name, game_logo)
@@ -33,6 +33,7 @@ VALUES
   SELECT user_id
   FROM users;
   
-  INSERT INTO conversation_input(input_id)
+  INSERT INTO conversation_output(output_user_id)
   SELECT user_id
   FROM users;
+  
