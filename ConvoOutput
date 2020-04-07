@@ -1,0 +1,60 @@
+
+package GaminoDatabase;
+
+/**
+ *
+ * @author Mel_Hiam
+ */
+public class ConvoOutput {
+    
+    private int userId;
+    private String date;
+    private String time;
+    private String outputMessage;
+    private boolean read;
+    
+    
+    
+    public ConvoOutput() {
+    }
+    
+    public ConvoOutput(int userId, String date, String time, String outputMessage, boolean read) {
+        this.userId = userId; 
+        this.date = date;
+        this.time = time;
+        this.outputMessage = outputMessage;
+        this.read = read;
+    }
+     
+    public Integer getuserId() {
+        return userId;
+    }
+    public void setuserID(int userId) {
+        this.userId = userId;
+    }
+    public String getDate() {
+        return date;
+    }
+    public void setDate(String date) {
+        this.date = date;
+    }
+    public String getTime() {
+        return time;
+    }
+    public void setTime(String time) {
+        this.time = time;
+    }
+    public String getOnputMessage() {
+        return outputMessage;
+    }
+    public void setOutputMessage(String outputMessage) {
+        this.outputMessage = outputMessage;
+    }
+    public Boolean getRead() {
+        return read;
+    }
+    public void setRead(boolean read) {
+        this.read = read;
+    }
+    
+}
