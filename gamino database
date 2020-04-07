@@ -17,14 +17,22 @@ VALUES
   ('Nier: Automata', null),
   ('Stardew Valley', null);
   
+  INSERT INTO favorites (fave_game_id)
+  SELECT game_id
+  FROM games;
+  SELECT game_id
+  FROM games;
+  INSERT INTO favorites(user_fav_id)
+  SELECT user_id
+  FROM users;
   INSERT INTO favorites (fave_game_logo)
-  VALUES (null);
+  SELECT game_logo
+  FROM games;
   
-  INSERT INTO topics(topic_game_id, topic_input_id, topic_output_id, topic_title)
-  VALUES (1, 1, 1, 'testing');
+  INSERT INTO conversation_input(input_user_id)
+  SELECT user_id
+  FROM users;
   
-  INSERT INTO conversation_input(input_pic, input_user_id, input_message)
-  VALUES(null, 1, 'testing testing');
-  
-  INSERT INTO conversation_output (output_user_id, output_message, output_pic, output_read)
-  VALUES (1, 'testing testing', null, 1);
+  INSERT INTO conversation_input(input_id)
+  SELECT user_id
+  FROM users;
