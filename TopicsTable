@@ -1,0 +1,26 @@
+package GaminoDatabase;
+
+/**
+ *
+ * @author Mel_Hiam
+ */
+public class TopicsTable {
+    
+    private String topicTitle;
+    
+    
+    public TopicsTable() {
+    }
+    
+    public TopicsTable(String topicsTitle) {
+        this.topicTitle = topicsTitle; 
+    }
+     
+    public String getTopicsTitle() {
+        return topicTitle;
+    }
+    public void setTopicsTitle(String topicsTitle) {
+        this.topicTitle = topicTitle;
+    }
+    
+}
