@@ -1,39 +1,51 @@
-show create table users;
-show create table topics;
-show create table games;
-show create table favorites;
-show create table conversation_input;
-show create table conversation_output;
+CREATE SCHEMA `gamino` ;
+
+CREATE TABLE `gamino`.`users` (
+  `userId` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `user_email` VARCHAR(45) NOT NULL,
+  `user_first_name` VARCHAR(45) NOT NULL,
+  `user_last_name` VARCHAR(45) NOT NULL,
+  `user_password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`userId`));
+
+CREATE TABLE `gamino`.`games` (
+  `game_Id` INT NOT NULL AUTO_INCREMENT,
+  `game_name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`game_Id`));
+
+ALTER TABLE `gamino`.`users` 
+CHANGE COLUMN `user_Id` `user_ID` INT NOT NULL AUTO_INCREMENT ;
+
+CREATE TABLE `gamino`.`forum` (
+  `forum_Id` INT NOT NULL AUTO_INCREMENT,
+  `forum_game_Id` INT NOT NULL DEFAULT 0,
+  `forum_user_Id` INT NOT NULL DEFAULT 0,
+  `forum_input` LONGTEXT NULL,
+  `forum_time` DATETIME NULL,
+  PRIMARY KEY (`forum_Id`),
+  INDEX `forum_user_Id_idx` (`forum_user_Id` ASC) VISIBLE,
+  INDEX `forum_game_Id_idx` (`forum_game_Id` ASC) VISIBLE,
+  CONSTRAINT `forum_user_Id`
+    FOREIGN KEY (`forum_user_Id`)
+    REFERENCES `gamino`.`users` (`user_ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `forum_game_Id`
+    FOREIGN KEY (`forum_game_Id`)
+    REFERENCES `gamino`.`games` (`game_Id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 INSERT INTO users (username, user_email, user_first_name, user_last_name, user_password)
 VALUES ('gametester', 'gametester@fake.com', 'John', 'Doe', 'myp@55word');
 
-INSERT INTO games (game_name, game_logo)
+INSERT INTO games (game_name)
 VALUES 
-  ('Persona', null),
-  ('Kingdom Hearts', null),
-  ('The Sims', null),
-  ('Overcooked', null),
-  ('Nier: Automata', null),
-  ('Stardew Valley', null);
-  
-  INSERT INTO favorites (fave_game_id)
-  SELECT game_id
-  FROM games;
-  SELECT game_id
-  FROM games;
-  INSERT INTO favorites(user_fav_id)
-  SELECT user_id
-  FROM users;
-  INSERT INTO favorites (fave_game_logo)
-  SELECT game_logo
-  FROM games;
-  
-  INSERT INTO conversation_input(input_user_id)
-  SELECT user_id
-  FROM users;
-  
-  INSERT INTO conversation_output(output_user_id)
-  SELECT user_id
-  FROM users;
-  
+  ('Persona'),
+  ('Kingdom Hearts'),
+  ('The Sims'),
+  ('Overcooked'),
+  ('Nier: Automata'),
+  ('Stardew Valley');
+
